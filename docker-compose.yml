@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  prismaconfigdb:
+    image: mysql:8.0
+    container_name: prismaconfig-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: prismaconfigdb
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql_data:/var/lib/mysql
